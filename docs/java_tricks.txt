@@ -1,3 +1,119 @@
+- Array
+    - int[] zeroSizedArray = {};  - 0-sized arrays
+    - Arrays.fill(...)
+    - Arrays.sort(...)
+    - int indexOfSearchedElement = Arrays.binarySearch(...)
+
+- List
+
+
+- StreamApi
+
+
+
+
+
+- Collections
+    - Iterable
+        - Collection
+            - List
+                - ArrayList - C
+                - Vector - C
+                    - Stack - C
+                - LinkedList - C
+            - Queue
+                - Deque
+                    - ArrayQueue - C
+                - PriorityQueue - C
+                - BlockingQueue
+                    - PriorityBlockingQueue - C
+                    - LinkedBlockingQueue - C
+            - Set
+                - SortedSet
+                    - NavigableSet
+                    - TreeSet - C
+                - HashSet - C
+                - LinkedHashSet - C
+
+- Map
+    - HashMap - C
+    - LinkedHashMap - C
+    - Hashtable - C
+    - SortedMap
+        - NavigableMap
+            - TreeMap - C
+
+
 https://tusharghosh09006.medium.com/cheat-sheet-on-java-collection-709ca96edc9d
 https://drive.google.com/file/d/1ao4ZA28zzBttDkuS6MLQI52gDs_CJZEm/view
 https://www.evernote.com/shard/s615/client/snv?isnewsnv=true&noteGuid=6a655541-479e-45e6-bb4d-5bbd352904b6&noteKey=b7a04b61330e1ac911a2a7281cae1447&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs615%2Fsh%2F6a655541-479e-45e6-bb4d-5bbd352904b6%2Fb7a04b61330e1ac911a2a7281cae1447&title=java%2Btricks
+
+- Java
+	- AbstractMap.SimpleEntry<K, V> 								- za parove, ima implementiran equlas i hashCode
+	- PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>(); 				- MIN HEAP
+	- PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>(Collections.reverseOrder()); 	- MAX HEAP
+		- queue.add(elem), queue.poll()
+	- str.substring(begin, end) - beginIndex - the begin index, inclusive, endIndex - the end index, exclusive
+	- Arrays.fill(arr, X) - inicijalizacija jednodimenzionog niza
+	- rand.nextInt(bound) - value between 0 (inclusive) and the specified value (exclusive)
+	- rand.nextDouble() - uniformly from the range 0.0d (inclusive) to 1.0d (exclusive)
+	- Math.abs(): double, int, long
+	- Math.round() - 85.5 -> 86, 85.4999 -> 85, 85.499999999999 -> 86 !!!
+	- Math.ceil(): double
+	- Math.floor(): double
+	- Collections.sort(colection, Comparator.comparing(element -> element.comparingValue())) - sortiranje kolekcija
+	- Object clone(), boolean equals(Object obj), int hashCode()
+	- indexOf(String s) -> O(m*n)
+	- EnumSet operacije ...
+	- Comparable - compareTo(T t1) - ako postoji neki prirodni redosled za objekte
+	- Comparator - compare(T t1, T t2) - kad ocekujes da imas vise razlicitih nacina poredjenja
+		- mogu se kreirati i preko lambde
+		- imaju i Comparator.comparing(metoda) opciju gde prosledjujes property klase po kojoj vrsis poredjenje
+		- izbegavaj ovaj trick jer moze da dovede do overflow-a: Comparator<Player> comparator = (p1, p2) -> p1.getRanking() - p2.getRanking();
+	- Operacije sa Stringovima
+		- substring(int beginIndex, int endIndex) - O(n), O(n)
+		- indexOf(String str) - O(n*m), O(1)
+		- endsWith(String suffix) - O(m), O(1)
+		- trim() - O(n), O(n)
+
+	- Kolekcije
+		- List
+			- ArrayList
+			- LinkedList
+		- Set
+			- HashSet
+			- LinkedHashSet - odrzava redosled baziran na redosledu ubacivanja
+			- TreeSet - baziran na crno-crvenom stablu, odrzava elemente sortiranim
+		- Queue
+			- LinkedList
+			- PriorityQueue
+			- ArrayDeque
+		- Deque
+			- ArrayDeque
+			- LinkedList
+		- Map
+			- HashMap
+			- LinkedHashMap
+			- TreeMap
+		- Stack
+			- Stack - ne preporucuje se !!!
+		- EnumSet
+		- EnumMap
+		- BitSet
+
+- arrays
+	arr.clone()
+	arr.length
+
+- hash tables
+	- HashMap - O(1) 	- vreme pristupa (u proseku) za čitanje i pisanje elemenata
+	- TreeMap - O(logN) 	- vreme pristupa za čitanje i pisanje elemenata, garantuje sortiranje elemenata prema ključevima
+		- ako hoces obrnuti redosled, najbolje da zadas Comparator u konstruktoru
+	- LinkedHashMap - O(1)	- vreme pristupa (u proseku) za čitanje i pisanje elemenata, cuva redosled elemenata prema redosledu umetanja
+		- ako hoces da sacuvas i access order, moras da setujes accessOrder = true, prilikom kreiranja kako bi i na access slao taj element na kraj liste
+	---
+	- EnumMap
+	- Hashtable
+	---
+	- IdentitiyHashMap
+	- WeakHashMap
