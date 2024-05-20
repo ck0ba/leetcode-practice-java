@@ -2,6 +2,8 @@ package org.back0.leetcode.stack_and_queue;
 
 import java.util.Stack;
 
+//https://leetcode.com/problems/implement-queue-using-stacks/description/
+
 public class StacksAndQueues {
     private final Stack<Integer> enqueueStack;
     private final Stack<Integer> dequeueStack;
