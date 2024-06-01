@@ -75,7 +75,7 @@ public class CollectionsTesting {
 
         var sb = new StringBuilder();
 
-        char initialChar = sb.chartAt(0);
+        char initialChar = sb.charAt(0);
         sb.setCharAt(0, 's');
         sb.deleteCharAt(0);
         sb.length();
